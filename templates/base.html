@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="GridLock F1 — A futuristic Formula 1 dashboard for the 2026 season. Explore the grid, teams, and drivers."
+    />
+    <title>{% block title %}GridLock F1{% endblock %}</title>
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='favicon.svg') }}"
+      type="image/svg+xml"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/main.css') }}"
+    />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="{{ url_for('home') }}" class="nav-logo">
+          <span class="logo-icon">⚡</span>
+          <span class="logo-text"
+            >Grid<span class="logo-accent">Lock</span></span
+          >
+        </a>
+        <div class="nav-links" id="navLinks">
+          <a
+            href="{{ url_for('home') }}"
+            class="nav-link {% if request.endpoint == 'home' %}active{% endif %}"
+            >Home</a
+          >
+          <a
+            href="{{ url_for('grid') }}"
+            class="nav-link {% if request.endpoint == 'grid' %}active{% endif %}"
+            >2026 Grid</a
+          >
+          <a
+            href="{{ url_for('about') }}"
+            class="nav-link {% if request.endpoint == 'about' %}active{% endif %}"
+            >About</a
+          >
+        </div>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Toggle navigation"
+        >
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+          <span class="toggle-bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">{% block content %}{% endblock %}</main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h4 class="footer-heading">GridLock F1</h4>
+            <p class="footer-text">
+              A futuristic dashboard for the 2026 Formula 1 season. Built with
+              passion for racing.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-heading">Pages</h4>
+            <ul class="footer-list">
+              <li><a href="{{ url_for('home') }}">Home</a></li>
+              <li><a href="{{ url_for('grid') }}">2026 Grid</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-heading">Links</h4>
+            <ul class="footer-list">
+              <li>
+                <a href="https://github.com" target="_blank" rel="noopener"
+                  >GitHub</a
+                >
+              </li>
+              <li>
+                <a href="https://formula1.com" target="_blank" rel="noopener"
+                  >Formula1.com</a
+                >
+              </li>
+              <li>
+                <a href="https://hackclub.com" target="_blank" rel="noopener"
+                  >Hack Club</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2026 GridLock F1. Built for
+            <a href="https://hackclub.com" target="_blank" rel="noopener"
+              >Hack Club Slushies</a
+            >.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  </body>
+</html>

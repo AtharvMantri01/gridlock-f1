@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block title %}2026 F1 Grid — GridLock F1{% endblock
+%} {% block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="section-tag fade-in">Season 2026</span>
+    <h1 class="page-hero-title fade-in">The Grid</h1>
+    <p class="page-hero-subtitle fade-in">
+      All 11 teams and 22 drivers competing in the 2026 FIA Formula One World
+      Championship.
+    </p>
+  </div>
+</section>
+
+<section class="grid-section">
+  <div class="container">
+    <div class="teams-grid">
+      {% for team in teams %}
+      <article class="team-card fade-in" style="--team-color: {{ team.color }}">
+        <div class="team-card-glow"></div>
+        <div class="team-card-header">
+          <div class="team-color-bar"></div>
+          <div class="team-info">
+            <h2 class="team-name">{{ team.name }}</h2>
+            <span class="team-engine">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="3" />
+                <path
+                  d="M12 1v6m0 6v6m11-7h-6m-6 0H1m18.07-6.07l-4.24 4.24M9.17 14.83l-4.24 4.24m0-12.14l4.24 4.24m5.66 5.66l4.24 4.24"
+                />
+              </svg>
+              {{ team.engine }}
+            </span>
+          </div>
+        </div>
+        <div class="team-card-drivers">
+          {% for driver in team.drivers %}
+          <div class="driver-row">
+            <div class="driver-number">#{{ driver.number }}</div>
+            <div class="driver-details">
+              <span class="driver-name">{{ driver.name }}</span>
+              <span class="driver-country">{{ driver.country }}</span>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

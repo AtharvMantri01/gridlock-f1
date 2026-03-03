@@ -1,0 +1,169 @@
+{% extends "base.html" %} {% block title %}About — GridLock F1{% endblock %} {%
+block content %}
+<section class="page-hero">
+  <div class="container">
+    <span class="section-tag fade-in">About</span>
+    <h1 class="page-hero-title fade-in">GridLock F1</h1>
+    <p class="page-hero-subtitle fade-in">
+      A passion project celebrating the most revolutionary regulation change in
+      Formula 1 history.
+    </p>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="container">
+    <div class="about-grid">
+      <!-- About Card -->
+      <div class="about-card fade-in">
+        <div class="about-card-icon">🏎️</div>
+        <h2>What is GridLock?</h2>
+        <p>
+          GridLock F1 is a futuristic dashboard built to showcase the 2026
+          Formula 1 season — featuring 11 teams, 22 drivers, and the biggest
+          regulation overhaul the sport has ever seen.
+        </p>
+        <p>
+          From new power units delivering 350kW of electric power to active
+          aerodynamics and the arrival of Cadillac as the 11th constructor, 2026
+          promises to reshape everything we know about Formula 1.
+        </p>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="about-card fade-in">
+        <div class="about-card-icon">⚙️</div>
+        <h2>Built With</h2>
+        <ul class="tech-list">
+          <li>
+            <span class="tech-name">Python + Flask</span>
+            <span class="tech-desc"
+              >Lightweight backend serving Jinja2 templates</span
+            >
+          </li>
+          <li>
+            <span class="tech-name">Vanilla CSS</span>
+            <span class="tech-desc"
+              >Custom design system with glassmorphism &amp; animations</span
+            >
+          </li>
+          <li>
+            <span class="tech-name">Vanilla JavaScript</span>
+            <span class="tech-desc"
+              >IntersectionObserver for scroll animations</span
+            >
+          </li>
+          <li>
+            <span class="tech-name">Google Fonts</span>
+            <span class="tech-desc">Inter &amp; Space Grotesk typefaces</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline-section fade-in">
+      <h2 class="section-title" style="text-align: center; margin-bottom: 3rem">
+        2026 Regulation Timeline
+      </h2>
+      <div class="timeline">
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">June 2023</span>
+            <h3>New PU Regulations Announced</h3>
+            <p>
+              FIA reveals the 2026 power unit rules: simpler ICE, larger
+              battery, 350kW MGU-K, and removal of MGU-H.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">November 2023</span>
+            <h3>GM/Cadillac Entry Approved</h3>
+            <p>
+              FIA approves General Motors' entry as the 11th F1 team under the
+              Cadillac brand, starting 2026.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024</span>
+            <h3>Chassis Rules Finalised</h3>
+            <p>
+              Active aerodynamics confirmed. Cars will feature movable wing
+              elements for DRS-free overtaking modes.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2025</span>
+            <h3>Driver Market Shakeup</h3>
+            <p>
+              Hamilton to Ferrari. Verstappen stays at Red Bull. Cadillac signs
+              Bottas and Pérez. The grid takes shape.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item fade-in">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">March 2026</span>
+            <h3>Season Begins</h3>
+            <p>
+              The most revolutionary F1 season in decades gets underway with 11
+              teams and 22 drivers.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fun Facts -->
+    <div class="facts-section">
+      <div class="section-header fade-in">
+        <span class="section-tag">Did You Know?</span>
+        <h2 class="section-title">F1 Trivia</h2>
+      </div>
+      <div class="facts-grid">
+        <div class="fact-card fade-in">
+          <span class="fact-number">01</span>
+          <p>
+            Fernando Alonso will be <strong>44 years old</strong> at the start
+            of the 2026 season — the oldest driver on the grid.
+          </p>
+        </div>
+        <div class="fact-card fade-in">
+          <span class="fact-number">02</span>
+          <p>
+            Arvid Lindblad will be the <strong>only rookie</strong> on the 2026
+            grid, racing for Racing Bulls.
+          </p>
+        </div>
+        <div class="fact-card fade-in">
+          <span class="fact-number">03</span>
+          <p>
+            Lewis Hamilton's move to Ferrari marks the
+            <strong>first time</strong> a 7-time champion has switched teams
+            this late in their career.
+          </p>
+        </div>
+        <div class="fact-card fade-in">
+          <span class="fact-number">04</span>
+          <p>
+            Red Bull will debut as a
+            <strong>power unit manufacturer</strong> for the first time,
+            supplying both their teams.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

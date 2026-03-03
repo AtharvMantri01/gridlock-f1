@@ -1,0 +1,139 @@
+{% extends "base.html" %} {% block title %}GridLock F1 — The Future of Formula
+1{% endblock %} {% block content %}
+<!-- Hero Section -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-grid-lines"></div>
+    <div class="hero-glow"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge fade-in">SEASON 2026</div>
+    <h1 class="hero-title fade-in">
+      The Future of<br />
+      <span class="hero-accent">Formula 1</span>
+    </h1>
+    <p class="hero-subtitle fade-in">
+      New regulations. New power units. New teams. The most revolutionary era in
+      F1 history starts now.
+    </p>
+    <div class="hero-actions fade-in">
+      <a href="{{ url_for('grid') }}" class="btn btn-primary"
+        >Explore the Grid</a
+      >
+      <a href="{{ url_for('about') }}" class="btn btn-ghost">Learn More</a>
+    </div>
+  </div>
+  <div class="hero-scroll-indicator fade-in">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section" id="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card fade-in">
+        <span class="stat-number">11</span>
+        <span class="stat-label">Teams</span>
+      </div>
+      <div class="stat-card fade-in">
+        <span class="stat-number">22</span>
+        <span class="stat-label">Drivers</span>
+      </div>
+      <div class="stat-card fade-in">
+        <span class="stat-number">6</span>
+        <span class="stat-label">Engine Makers</span>
+      </div>
+      <div class="stat-card fade-in">
+        <span class="stat-number">24</span>
+        <span class="stat-label">Races</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Teams Preview -->
+<section class="featured-section" id="featured">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">Featured</span>
+      <h2 class="section-title">The 2026 Grid at a Glance</h2>
+      <p class="section-desc">
+        Eleven constructors. Twenty-two drivers. One world championship.
+      </p>
+    </div>
+    <div class="featured-grid">
+      {% for team in teams[:4] %}
+      <div
+        class="team-preview-card fade-in"
+        style="--team-color: {{ team.color }}"
+      >
+        <div class="team-preview-accent"></div>
+        <div class="team-preview-content">
+          <h3 class="team-preview-name">{{ team.name }}</h3>
+          <span class="team-preview-engine">{{ team.engine }}</span>
+          <div class="team-preview-drivers">
+            {% for driver in team.drivers %}
+            <div class="preview-driver">
+              <span class="preview-driver-number">#{{ driver.number }}</span>
+              <span class="preview-driver-name">{{ driver.name }}</span>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="section-cta fade-in">
+      <a href="{{ url_for('grid') }}" class="btn btn-primary"
+        >View Full Grid →</a
+      >
+    </div>
+  </div>
+</section>
+
+<!-- Highlights Section -->
+<section class="highlights-section" id="highlights">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-tag">2026 Changes</span>
+      <h2 class="section-title">A New Era of Racing</h2>
+    </div>
+    <div class="highlights-grid">
+      <div class="highlight-card fade-in">
+        <div class="highlight-icon">⚡</div>
+        <h3>New Power Units</h3>
+        <p>
+          Increased electrical power, reduced fuel flow. The most efficient F1
+          engines ever created.
+        </p>
+      </div>
+      <div class="highlight-card fade-in">
+        <div class="highlight-icon">🏎️</div>
+        <h3>Active Aero</h3>
+        <p>
+          Movable aerodynamic surfaces return. Cars can switch between
+          high-downforce and low-drag modes.
+        </p>
+      </div>
+      <div class="highlight-card fade-in">
+        <div class="highlight-icon">🏁</div>
+        <h3>11th Team</h3>
+        <p>
+          Cadillac joins the grid as GM's factory entry — the first new
+          constructor since 2016.
+        </p>
+      </div>
+      <div class="highlight-card fade-in">
+        <div class="highlight-icon">🔋</div>
+        <h3>350kW Electric</h3>
+        <p>
+          The MGU-K now produces 350kW — nearly three times the power of the
+          current hybrid system.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
